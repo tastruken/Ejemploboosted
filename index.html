@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Burger | El Verdadero Sabor Callejero</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Anton', 'sans-serif'],
+                        marker: ['Permanent Marker', 'cursive'],
+                    },
+                    colors: {
+                        brand: {
+                            yellow: '#FACC15',
+                            dark: '#111111',
+                            red: '#EF4444',
+                            gray: '#1F2937'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: white;
+            overflow-x: hidden;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px rgba(250, 204, 21, 0.3);
+        }
+        .burger-gradient {
+            background: linear-gradient(180deg, rgba(17,17,17,0) 0%, rgba(17,17,17,1) 100%);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FACC15;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i data-lucide="flame" class="text-brand-yellow w-8 h-8"></i>
+                    <span class="font-display text-3xl tracking-wide">STREET<span class="text-brand-yellow">BURGER</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-brand-yellow px-3 py-2 rounded-md text-sm font-medium transition">Inicio</a>
+                        <a href="#star" class="text-brand-yellow px-3 py-2 rounded-md text-sm font-bold uppercase tracking-wider transition">La Mega Ultra</a>
+                        <a href="#menu" class="hover:text-brand-yellow px-3 py-2 rounded-md text-sm font-medium transition">Menú</a>
+                        <a href="#contact" class="hover:text-brand-yellow px-3 py-2 rounded-md text-sm font-medium transition">Ubicación</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button onclick="scrollToOrder()" class="bg-brand-yellow text-black font-bold px-6 py-2 rounded-full hover:bg-yellow-400 transition transform hover:scale-105">
+                        PEDIR AHORA
+                    </button>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:text-brand-yellow">Inicio</a>
+                <a href="#star" class="block px-3 py-2 rounded-md text-base font-bold text-brand-yellow">La Mega Ultra</a>
+                <a href="#menu" class="block px-3 py-2 rounded-md text-base font-medium hover:text-brand-yellow">Menú</a>
+                <button onclick="scrollToOrder()" class="w-full text-left block px-3 py-2 rounded-md text-base font-bold text-black bg-brand-yellow mt-4">PEDIR AHORA</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=2000&auto=format&fit=crop" alt="Burger Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
+            <span class="inline-block py-1 px-3 rounded bg-brand-red text-white text-xs font-bold tracking-widest mb-4 animate-pulse">ESTILO CALLEJERO AUTÉNTICO</span>
+            <h1 class="font-display text-6xl md:text-8xl lg:text-9xl uppercase leading-none mb-6">
+                El Verdadero <br>
+                <span class="text-brand-yellow text-stroke md:text-brand-yellow md:text-stroke-0">Monstruo</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Olvídate de las hamburguesas gourmet pretenciosas. Aquí venimos a ensuciarnos las manos con sabor real, grasa de la buena y tamaño descomunal.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#star" class="bg-brand-yellow text-black font-display text-xl px-8 py-4 rounded hover:bg-yellow-400 transition transform hover:-translate-y-1 shadow-[0_0_20px_rgba(250,204,21,0.4)]">
+                    CONOCE A LA BESTIA
+                </a>
+                <a href="#menu" class="border border-white/30 hover:border-white text-white font-display text-xl px-8 py-4 rounded hover:bg-white/10 transition">
+                    VER MENÚ COMPLETO
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE STAR PRODUCT SECTION -->
+    <section id="star" class="py-24 bg-[#111] relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-yellow rounded-full filter blur-[120px] opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-red rounded-full filter blur-[150px] opacity-10"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-marker text-brand-red text-2xl mb-2 transform -rotate-2">Advertencia: Altamente Adictiva</h2>
+                <h3 class="font-display text-5xl md:text-7xl text-white uppercase">Street Burger <span class="text-brand-yellow">3.0</span></h3>
+                <p class="text-gray-400 tracking-[0.5em] text-sm mt-2 font-bold">MEGA ULTRA HYPER EDITION</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <!-- The Burger Image Area -->
+                <div class="w-full lg:w-1/2 relative group">
+                    <div class="absolute inset-0 bg-brand-yellow rounded-full filter blur-[60px] opacity-20 group-hover:opacity-40 transition duration-700"></div>
+                    <!-- Using a placeholder but simulating the "Star" product -->
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Street Burger 3.0 Mega Ultra Hyper" 
+                         class="relative w-full h-auto object-contain animate-float drop-shadow-2xl transform transition duration-500 hover:scale-105 z-10 rounded-2xl">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -top-4 -right-4 bg-brand-red text-white font-display text-2xl p-6 rounded-full rotate-12 shadow-lg z-20 flex items-center justify-center w-32 h-32 border-4 border-black">
+                        <div class="text-center leading-none">
+                            <span class="block text-sm font-sans font-bold">SOLO</span>
+                            $12.990
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Specs -->
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <div class="space-y-6">
+                        <p class="text-xl text-gray-300 leading-relaxed border-l-4 border-brand-yellow pl-6">
+                            No es solo comida, es un desafío. La <span class="text-white font-bold">3.0 Mega Ultra Hyper</span> fue diseñada para los que no conocen el miedo. Evolucionada de la versión 2.0, ahora con más queso, más carne y nuestra salsa secreta inyectada.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                            <div class="bg-gray-900 p-4 rounded-lg border border-gray-800 flex items-center gap-4 hover:border-brand-yellow transition cursor-default">
+                                <div class="bg-brand-yellow/10 p-2 rounded text-brand-yellow"><i data-lucide="beef" class="w-6 h-6"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-white">Triple Smash</h4>
+                                    <p class="text-xs text-gray-400">450g de Carne Angus Certificada</p>
+                                </div>
+                            </div>
+                            <div class="bg-gray-900 p-4 rounded-lg border border-gray-800 flex items-center gap-4 hover:border-brand-yellow transition cursor-default">
+                                <div class="bg-brand-yellow/10 p-2 rounded text-brand-yellow"><i data-lucide="droplet" class="w-6 h-6"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-white">Salsa 3.0</h4>
+                                    <p class="text-xs text-gray-400">Receta secreta picante & ahumada</p>
+                                </div>
+                            </div>
+                            <div class="bg-gray-900 p-4 rounded-lg border border-gray-800 flex items-center gap-4 hover:border-brand-yellow transition cursor-default">
+                                <div class="bg-brand-yellow/10 p-2 rounded text-brand-yellow"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-white">Cheddar Fundido</h4>
+                                    <p class="text-xs text-gray-400">5 láminas de queso real</p>
+                                </div>
+                            </div>
+                            <div class="bg-gray-900 p-4 rounded-lg border border-gray-800 flex items-center gap-4 hover:border-brand-yellow transition cursor-default">
+                                <div class="bg-brand-yellow/10 p-2 rounded text-brand-yellow"><i data-lucide="flame" class="w-6 h-6"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-white">Tocino Hyper</h4>
+                                    <p class="text-xs text-gray-400">Caramelizado en whisky y maple</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <button onclick="addToCart('Street Burger 3.0')" class="w-full sm:w-auto bg-gradient-to-r from-brand-yellow to-yellow-500 text-black font-display text-2xl px-10 py-5 rounded shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:shadow-[0_0_50px_rgba(250,204,21,0.7)] transition transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <i data-lucide="shopping-bag"></i>
+                            PEDIR ESTA BESTIA
+                        </button>
+                        <p class="text-center sm:text-left mt-4 text-sm text-gray-500 italic">* Incluye papas rústicas con piel y bebida XL.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini Menu Section -->
+    <section id="menu" class="py-20 bg-[#0f0f0f]">
+        <div class="container mx-auto px-4">
+            <h2 class="font-display text-4xl md:text-5xl text-center mb-16 uppercase">Los <span class="text-white text-stroke">Acompañantes</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-64 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=800&auto=format&fit=crop" alt="Classic Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-3 py-1 rounded text-white font-bold">$8.990</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl mb-2 text-white">Classic Street</h3>
+                        <p class="text-gray-400 text-sm mb-4">La original. Doble carne, lechuga, tomate, cebolla y mayonesa casera.</p>
+                        <button onclick="addToCart('Classic Street')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-64 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?q=80&w=800&auto=format&fit=crop" alt="Chicken Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-3 py-1 rounded text-white font-bold">$9.500</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl mb-2 text-white">Crispy Chicken Z</h3>
+                        <p class="text-gray-400 text-sm mb-4">Pechuga de pollo frita en panko, coleslaw picante y pepinillos dulces.</p>
+                        <button onclick="addToCart('Crispy Chicken Z')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-64 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?q=80&w=800&auto=format&fit=crop" alt="Fries" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-3 py-1 rounded text-white font-bold">$4.500</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl mb-2 text-white">Papas Volcánicas</h3>
+                        <p class="text-gray-400 text-sm mb-4">Bañadas en cheddar líquido, trozos de tocino y ciboulette.</p>
+                        <button onclick="addToCart('Papas Volcánicas')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Info -->
+    <section class="bg-brand-yellow text-black py-12">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <div class="bg-black text-brand-yellow p-4 rounded-full">
+                    <i data-lucide="truck" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h4 class="font-display text-2xl uppercase">Delivery Veloz</h4>
+                    <p class="font-bold">En menos de 45 mins o es gratis.</p>
+                </div>
+            </div>
+            <div class="h-12 w-px bg-black/20 hidden md:block"></div>
+            <div class="flex items-center gap-4">
+                <div class="bg-black text-brand-yellow p-4 rounded-full">
+                    <i data-lucide="award" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h4 class="font-display text-2xl uppercase">Calidad Premium</h4>
+                    <p class="font-bold">Carne fresca, nunca congelada.</p>
+                </div>
+            </div>
+            <div class="h-12 w-px bg-black/20 hidden md:block"></div>
+            <div class="flex items-center gap-4">
+                <div class="bg-black text-brand-yellow p-4 rounded-full">
+                    <i data-lucide="map-pin" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h4 class="font-display text-2xl uppercase">2 Ubicaciones</h4>
+                    <p class="font-bold">Centro & Zona Norte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black pt-16 pb-8 border-t border-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i data-lucide="flame" class="text-brand-yellow w-8 h-8"></i>
+                        <span class="font-display text-3xl tracking-wide text-white">STREET<span class="text-brand-yellow">BURGER</span></span>
+                    </div>
+                    <p class="text-gray-400 max-w-sm mb-6">
+                        Cocinando las hamburguesas más salvajes de la ciudad desde 2015. No apto para cardíacos ni gente a dieta.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded flex items-center justify-center hover:bg-brand-yellow hover:text-black transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded flex items-center justify-center hover:bg-brand-yellow hover:text-black transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded flex items-center justify-center hover:bg-brand-yellow hover:text-black transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-display text-white text-xl mb-6 uppercase">Horarios</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li class="flex justify-between"><span>Lun - Jue:</span> <span class="text-white">12pm - 11pm</span></li>
+                        <li class="flex justify-between"><span>Vie - Sáb:</span> <span class="text-white">12pm - 2am</span></li>
+                        <li class="flex justify-between"><span>Dom:</span> <span class="text-white">1pm - 11pm</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-white text-xl mb-6 uppercase">Contacto</h4>
+                    <ul class="text-gray-400 space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="text-brand-yellow w-5 h-5 mt-1"></i>
+                            <span>Av. Principal 1234,<br>Zona Centro, Ciudad</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="text-brand-yellow w-5 h-5"></i>
+                            <span>+56 9 1234 5678</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-900 pt-8 text-center text-gray-600 text-sm">
+                <p>&copy; 2024 Street Burger. Todos los derechos reservados. Diseñado con grasa y amor.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-white text-black px-6 py-4 rounded-lg shadow-2xl transform translate-y-32 transition duration-300 z-50 flex items-center gap-3 border-l-4 border-brand-yellow">
+        <div class="bg-green-100 p-1 rounded-full text-green-600">
+            <i data-lucide="check" class="w-5 h-5"></i>
+        </div>
+        <div>
+            <h4 class="font-bold text-sm">¡Añadido!</h4>
+            <p id="toast-message" class="text-xs text-gray-600">Street Burger 3.0 añadida.</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll Logic for Order Button
+        function scrollToOrder() {
+            const section = document.getElementById('star');
+            section.scrollIntoView({ behavior: 'smooth' });
+            toggleMenu(); // Close menu if open
+        }
+
+        // Cart Toast Logic
+        function addToCart(itemName) {
+            const toast = document.getElementById('toast');
+            const message = document.getElementById('toast-message');
+            
+            message.innerText = `${itemName} se añadió a tu pedido.`;
+            toast.classList.remove('translate-y-32');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-32');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
