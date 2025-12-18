@@ -232,47 +232,271 @@
     <!-- Mini Menu Section -->
     <section id="menu" class="py-20 bg-[#0f0f0f]">
         <div class="container mx-auto px-4">
-            <h2 class="font-display text-4xl md:text-5xl text-center mb-16 uppercase">Los <span class="text-white text-stroke">Acompañantes</span></h2>
+            <h2 class="font-display text-4xl md:text-5xl text-center mb-16 uppercase">El <span class="text-white text-stroke">Arsenal Completo</span></h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Item 1 -->
+            <!-- Grid expanded to 4 columns for 20 items -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 1. Classic Street -->
                 <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
-                    <div class="h-64 overflow-hidden relative">
+                    <div class="h-48 overflow-hidden relative">
                          <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=800&auto=format&fit=crop" alt="Classic Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                         <div class="absolute top-2 right-2 bg-black/70 px-3 py-1 rounded text-white font-bold">$8.990</div>
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$8.990</div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-2xl mb-2 text-white">Classic Street</h3>
-                        <p class="text-gray-400 text-sm mb-4">La original. Doble carne, lechuga, tomate, cebolla y mayonesa casera.</p>
-                        <button onclick="addToCart('Classic Street')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Classic Street</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">La original. Doble carne, lechuga, tomate, cebolla y mayo casera.</p>
+                        <button onclick="addToCart('Classic Street')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
                     </div>
                 </div>
 
-                <!-- Item 2 -->
+                <!-- 2. Crispy Chicken Z -->
                 <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
-                    <div class="h-64 overflow-hidden relative">
+                    <div class="h-48 overflow-hidden relative">
                          <img src="https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?q=80&w=800&auto=format&fit=crop" alt="Chicken Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                         <div class="absolute top-2 right-2 bg-black/70 px-3 py-1 rounded text-white font-bold">$9.500</div>
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$9.500</div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-2xl mb-2 text-white">Crispy Chicken Z</h3>
-                        <p class="text-gray-400 text-sm mb-4">Pechuga de pollo frita en panko, coleslaw picante y pepinillos dulces.</p>
-                        <button onclick="addToCart('Crispy Chicken Z')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Crispy Chicken Z</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Pollo frito en panko, coleslaw picante y pepinillos dulces.</p>
+                        <button onclick="addToCart('Crispy Chicken Z')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
                     </div>
                 </div>
 
-                <!-- Item 3 -->
+                <!-- 3. Double Trouble -->
                 <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
-                    <div class="h-64 overflow-hidden relative">
-                         <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?q=80&w=800&auto=format&fit=crop" alt="Fries" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                         <div class="absolute top-2 right-2 bg-black/70 px-3 py-1 rounded text-white font-bold">$4.500</div>
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800&auto=format&fit=crop" alt="Double Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$11.500</div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-2xl mb-2 text-white">Papas Volcánicas</h3>
-                        <p class="text-gray-400 text-sm mb-4">Bañadas en cheddar líquido, trozos de tocino y ciboulette.</p>
-                        <button onclick="addToCart('Papas Volcánicas')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Double Trouble</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Cuatro carnes smash, cuádruple cheddar y tocino crocante.</p>
+                        <button onclick="addToCart('Double Trouble')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
                     </div>
                 </div>
+
+                <!-- 4. Spicy Inferno -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1628151015694-8a473489679f?q=80&w=800&auto=format&fit=crop" alt="Spicy Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$10.990</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Spicy Inferno</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Jalapeños, salsa sriracha-mayo, queso jack y cebolla morada.</p>
+                        <button onclick="addToCart('Spicy Inferno')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 5. BBQ King -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?q=80&w=800&auto=format&fit=crop" alt="BBQ Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$11.200</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">BBQ King</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Aros de cebolla, salsa BBQ ahumada y tocino grueso.</p>
+                        <button onclick="addToCart('BBQ King')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 6. Mushroom Swiss -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?q=80&w=800&auto=format&fit=crop" alt="Mushroom Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$10.500</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Mushroom Swiss</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Champiñones salteados en mantequilla, queso suizo y alioli.</p>
+                        <button onclick="addToCart('Mushroom Swiss')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 7. The Vegan Rebel -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1550950158-d0d960dff51b?q=80&w=800&auto=format&fit=crop" alt="Vegan Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$10.990</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">The Vegan Rebel</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Burger de lentejas y quinoa, palta, rúcula y mayo vegana.</p>
+                        <button onclick="addToCart('The Vegan Rebel')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 8. Breakfast Beast -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=800&auto=format&fit=crop" alt="Breakfast Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$11.990</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Breakfast Beast</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Huevo frito, tocino, hashbrown y salsa de maple.</p>
+                        <button onclick="addToCart('Breakfast Beast')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 9. Hawaiian Punch -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop" alt="Pizza Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$10.500</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Hawaiian Punch</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Piña asada a la parrilla, jamón planchado y salsa teriyaki.</p>
+                        <button onclick="addToCart('Hawaiian Punch')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 10. Blue Cheese Blast -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1623653387945-2fd25214f8fc?q=80&w=800&auto=format&fit=crop" alt="Blue Cheese Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$11.500</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Blue Cheese Blast</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Trozo de queso azul intenso, cebolla caramelizada y rúcula.</p>
+                        <button onclick="addToCart('Blue Cheese Blast')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 11. Fish & Chips Burger -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1615937651187-847dbd974e3b?q=80&w=800&auto=format&fit=crop" alt="Fish Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$9.990</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Fish & Chips Burger</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Filete de merluza frito, salsa tártara y papas hilo.</p>
+                        <button onclick="addToCart('Fish & Chips Burger')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 12. Tex-Mex Crunch -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1599557474418-40b994d214c7?q=80&w=800&auto=format&fit=crop" alt="Tex Mex Burger" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$11.200</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Tex-Mex Crunch</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Nachos triturados, guacamole fresco, jalapeños y salsa roja.</p>
+                        <button onclick="addToCart('Tex-Mex Crunch')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 13. Papas Volcánicas -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?q=80&w=800&auto=format&fit=crop" alt="Fries" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$4.500</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Papas Volcánicas</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Bañadas en cheddar líquido, trozos de tocino y ciboulette.</p>
+                        <button onclick="addToCart('Papas Volcánicas')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 14. Onion Rings Tower -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?q=80&w=800&auto=format&fit=crop" alt="Onion Rings" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$3.990</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Onion Rings Tower</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Torre de 10 aros de cebolla empanizados con salsa ranch.</p>
+                        <button onclick="addToCart('Onion Rings Tower')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 15. Mozzarella Sticks -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1548340748-1d08cf48082c?q=80&w=800&auto=format&fit=crop" alt="Mozzarella Sticks" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$4.990</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Mozzarella Sticks</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">6 barritas de queso fundido con salsa marinara para untar.</p>
+                        <button onclick="addToCart('Mozzarella Sticks')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 16. Buffalo Wings -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?q=80&w=800&auto=format&fit=crop" alt="Buffalo Wings" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$6.500</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Buffalo Wings</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">6 alitas de pollo picantes con bastones de apio y blue cheese.</p>
+                        <button onclick="addToCart('Buffalo Wings')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 17. Truffle Fries -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1628203531478-43e622329241?q=80&w=800&auto=format&fit=crop" alt="Truffle Fries" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$5.500</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Truffle Fries</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Papas fritas con aceite de trufa blanca y queso parmesano.</p>
+                        <button onclick="addToCart('Truffle Fries')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 18. Chocolate Shake -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=800&auto=format&fit=crop" alt="Chocolate Shake" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$3.500</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Death by Chocolate</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Batido denso de chocolate belga, brownie y crema.</p>
+                        <button onclick="addToCart('Death by Chocolate')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 19. Vanilla Sky -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1579954115563-e72bf1381629?q=80&w=800&auto=format&fit=crop" alt="Vanilla Shake" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$3.500</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">Vanilla Sky</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Vainilla de Madagascar, caramelo salado y crema batida.</p>
+                        <button onclick="addToCart('Vanilla Sky')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
+                <!-- 20. Craft Beer -->
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:bg-[#222] transition border border-gray-800 hover:border-gray-600">
+                    <div class="h-48 overflow-hidden relative">
+                         <img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?q=80&w=800&auto=format&fit=crop" alt="Beer" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                         <div class="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded text-white font-bold text-sm">$4.000</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-display text-xl mb-1 text-white">House IPA</h3>
+                        <p class="text-gray-400 text-xs mb-3 h-8 line-clamp-2">Cerveza artesanal de la casa. Amarga, fría y refrescante.</p>
+                        <button onclick="addToCart('House IPA')" class="w-full border border-brand-yellow text-brand-yellow font-bold py-2 text-sm rounded hover:bg-brand-yellow hover:text-black transition">AGREGAR</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
